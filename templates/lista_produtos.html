@@ -1,0 +1,36 @@
+{% extends "template.html" %}
+{% block conteudo %}
+
+
+      <header class="jumbotron my-4" >
+        <h1 class="display-3">Protótipo TCC</h1>
+        <p class="lead">Desenvolvido em Flask</p>
+
+      </header>
+
+
+      <div class="row text-center">
+
+       {% for produto in produtos %}
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img class="card-img-top" src="{{ url_for('imagem', nome_arquivo='capa{}.jpg'.format(produto.id)) }}" alt="">
+            <div class="card-body">
+              <h4 class="card-title">{{ produto.nome }}</h4>
+              <p class="card-text">Esse produto {{ produto.nome }} pertence ao protótipo que desenvolvemos em Flask e custa R$ {{ produto.valor }},00.</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn btn-primary">Saiba mais!</a>
+            </div>
+          </div>
+        </div>
+
+        {% endfor %}
+
+      </div>
+      <!-- /.row -->
+
+{% endblock %}
+
+
+

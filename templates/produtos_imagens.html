@@ -1,0 +1,39 @@
+ <link rel="stylesheet" href="{{ url_for('static', filename='produtos_imagens.css') }}">
+{% extends "template.html" %}
+
+{% block conteudo %}
+ <br>
+ <br>
+ <br>
+ <br>
+ <div class="row">
+    {% for produto in produtos %}
+
+
+             <div class="col-lg-2">
+
+                    <img class="img-circle" src="{{ url_for('imagem', nome_arquivo='capa{}.jpg'.format(produto.id)) }}" alt="Generic placeholder image" width="140" height="140">
+
+
+            <h6 >{{ produto.nome }}</h6>
+
+                 <br>
+                 <br>
+
+
+             </div><!-- /.col-lg-4 -->
+
+
+ {% endfor %}
+      </div>
+
+  <br>
+ <br>
+ <br>
+ <br>
+
+  <br>
+ <br>
+ <br>
+ <br>
+{% endblock %}
